@@ -22,8 +22,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 19,
-  "iteration": 1641892829690,
+  "id": 3,
+  "iteration": 1646162445227,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -40,7 +40,7 @@
         "content": "# Disclaimer\n\n⚠️ This dashboard has some sample thresholds, this example is not meant to fit all use cases nor is it meant for production. Think of it as a learning tool to help you become comfortable with the metrics and thresholding.\n",
         "mode": "markdown"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "type": "text"
     },
     {
@@ -86,12 +86,12 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_record_error_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -149,12 +149,12 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_record_error_rate{kubernetes_namespace=\"$namespace\", client_id=~\"$client_id\"}",
@@ -215,12 +215,12 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_buffer_available_bytes{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -277,12 +277,12 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_produce_throttle_time_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -340,12 +340,12 @@
         },
         "textMode": "value_and_name"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_compression_rate_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -438,7 +438,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_request_latency_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -531,7 +531,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_record_queue_time_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -625,7 +625,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_failed_authentication_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -731,7 +731,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "rate(process_cpu_seconds_total{kubernetes_namespace=\"$namespace\"} [5m])",
@@ -824,7 +824,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "sum without(area)(jvm_memory_bytes_used{kubernetes_namespace=\"$namespace\"})",
@@ -917,7 +917,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "sum without(gc)(rate(jvm_gc_collection_seconds_sum{kubernetes_namespace=\"$namespace\"}[5m]))",
@@ -1024,7 +1024,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "kafka_producer_producer_metrics_outgoing_byte_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -1038,95 +1038,98 @@
       "type": "timeseries"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
       "description": "The average number of bytes sent per second to the broker per topic.\n",
       "fieldConfig": {
         "defaults": {
-          "links": []
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "Bytes/s",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Bps"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
         "h": 7,
         "w": 8,
         "x": 8,
         "y": 25
       },
-      "hiddenSeries": false,
       "id": 3,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
       "options": {
-        "alertThreshold": true
+        "legend": {
+          "calcs": [
+            "logmin",
+            "mean",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
       },
-      "percentage": false,
-      "pluginVersion": "8.3.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
-          "expr": "sum(kafka_producer_producer_topic_metrics_byte_rate{kubernetes_namespace=\"confluent-62\",topic=~\"$topic\"}) by (topic)",
+          "expr": "sum(kafka_producer_producer_topic_metrics_byte_rate{kubernetes_namespace=\"$namespace\",topic=~\"$topic\"}) by (topic)",
           "hide": false,
           "interval": "",
           "legendFormat": "{{topic}}",
           "refId": "A"
         }
       ],
-      "thresholds": [],
-      "timeRegions": [],
       "title": "Outgoing byte rate per topic",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "Bps",
-          "label": "Bytes/s",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
+      "type": "timeseries"
     },
     {
       "description": "The average number of messages sent per second to the broker per topic.\n",
@@ -1209,7 +1212,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": false,
           "expr": "sum(kafka_producer_producer_topic_metrics_byte_rate{kubernetes_namespace=\"$namespace\",topic=~\"$topic\"}) by (topic)",
@@ -1303,7 +1306,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_record_send_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -1505,7 +1508,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_requests_in_flight{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -1599,7 +1602,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_record_size_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -1706,7 +1709,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "rate(kafka_producer_producer_metrics_request_total{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}[5m])",
@@ -1800,7 +1803,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_request_size_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -1894,7 +1897,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_response_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2001,7 +2004,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "rate(kafka_producer_producer_metrics_connection_count{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}[5m])",
@@ -2095,7 +2098,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_connection_creation_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2188,7 +2191,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_connection_close_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2281,7 +2284,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_io_ratio{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2374,7 +2377,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_io_wait_time_ns_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2467,7 +2470,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_io_time_ns_avg{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2560,7 +2563,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_io_wait_ratio{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2653,7 +2656,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_select_rate{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2730,7 +2733,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "sum(kafka_server_socket_server_metrics_connections{kubernetes_namespace=\"$namespace\"}) by (clientSoftwareName, clientSoftwareVersion)",
@@ -2824,7 +2827,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_producer_producer_metrics_metadata_age{kubernetes_namespace=\"$namespace\",client_id=~\"$client_id\"}",
@@ -2847,22 +2850,14 @@
       {
         "current": {
           "selected": true,
-          "text": [
-            "confluent"
-          ],
-          "value": [
-            "confluent"
-          ]
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "6AjfXy0nk"
+          "text": "source",
+          "value": "source"
         },
         "definition": "label_values(kubernetes_namespace)",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
         "label": "Namespace",
-        "multi": true,
+        "multi": false,
         "name": "namespace",
         "options": [],
         "query": {
@@ -2882,15 +2877,11 @@
         "current": {
           "selected": true,
           "text": [
-            "producer-1"
+            "All"
           ],
           "value": [
-            "producer-1"
+            "$__all"
           ]
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "6AjfXy0nk"
         },
         "definition": "label_values(kafka_producer_app_info_start_time_ms, client_id)",
         "hide": 0,
@@ -2940,7 +2931,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -2960,6 +2951,6 @@
   "timezone": "",
   "title": "Producer Client Metrics",
   "uid": "-C-IEldWk",
-  "version": 33,
+  "version": 41,
   "weekStart": ""
 }

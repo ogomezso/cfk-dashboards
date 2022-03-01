@@ -22,8 +22,8 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 25,
-  "iteration": 1643643982466,
+  "id": 4,
+  "iteration": 1646164065557,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -40,7 +40,7 @@
         "content": "# Disclaimer\n\n⚠️ This dashboard has some sample thresholds, this example is not meant to fit all use cases nor is it meant for production. Think of it as a learning tool to help you become comfortable with the metrics and thresholding.\n",
         "mode": "markdown"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "type": "text"
     },
     {
@@ -99,12 +99,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_coordinator_metrics_commit_rate{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=~\"$instance\"}",
@@ -161,12 +161,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_fetch_manager_metrics_fetch_throttle_time_avg{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}",
@@ -223,12 +223,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_metrics_failed_authentication_rate{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}",
@@ -284,12 +284,12 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.3.3",
+      "pluginVersion": "8.3.4",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_coordinator_metrics_rebalance_rate_per_hour{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"} + kafka_consumer_consumer_coordinator_metrics_failed_rebalance_rate_per_hour{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}",
@@ -393,7 +393,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "rate(process_cpu_seconds_total{kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}[5m])",
@@ -484,7 +484,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "sum without(area)(jvm_memory_bytes_used{kubernetes_pod_name=~\"$instance\",kubernetes_namespace=~\"$namespace\"})",
@@ -495,7 +495,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "jvm_memory_bytes_max{kubernetes_pod_name=~\"$instance\",area=\"heap\",kubernetes_namespace=~\"$namespace\"}",
@@ -588,7 +588,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "sum without(gc)(rate(jvm_gc_collection_seconds_sum{kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}[5m]))",
@@ -694,7 +694,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "rate(kafka_consumer_consumer_fetch_manager_metrics_bytes_consumed_total{topic=~\"$topic\", client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}[5m])",
@@ -787,7 +787,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "rate(kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total{topic=~\"$topic\", client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}[5m])",
@@ -881,7 +881,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "sum(rate(kafka_consumer_consumer_fetch_manager_metrics_bytes_consumed_total{topic!=\"\", client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}[5m])) by (topic)",
@@ -974,7 +974,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "sum by (topic) (rate(kafka_consumer_consumer_fetch_manager_metrics_records_consumed_total{topic!=\"\", client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}[5m]))",
@@ -1080,7 +1080,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "rate(kafka_consumer_consumer_fetch_manager_metrics_fetch_total{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}[5m])",
@@ -1173,7 +1173,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_fetch_manager_metrics_fetch_size_avg{topic=~\"$topic\", client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}",
@@ -1265,7 +1265,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_fetch_manager_metrics_fetch_latency_avg{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}",
@@ -1369,7 +1369,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_coordinator_metrics_commit_latency_avg{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=~\"$instance\"}",
@@ -1461,7 +1461,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_coordinator_metrics_commit_rate{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\",kubernetes_pod_name=~\"$instance\"}",
@@ -1566,13 +1566,13 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_metrics_connection_count{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=~\"$instance\"}",
           "instant": false,
           "interval": "",
-          "legendFormat": "{{client_id}}@{{hostname}}",
+          "legendFormat": "{{client_id}}@{{kubernetes_pod_name}}",
           "refId": "B"
         }
       ],
@@ -1659,7 +1659,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "6AjfXy0nk"
+            "uid": "xnk887Y7k"
           },
           "exemplar": true,
           "expr": "kafka_consumer_consumer_node_metrics_response_rate{client_id=~\"$client_id\", kubernetes_namespace=\"$namespace\", kubernetes_pod_name=~\"$instance\"}",
@@ -1681,17 +1681,13 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "cp70n",
-          "value": "cp70n"
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "6AjfXy0nk"
+          "selected": true,
+          "text": "destination",
+          "value": "destination"
         },
         "definition": "label_values(kubernetes_namespace)",
         "hide": 0,
-        "includeAll": true,
+        "includeAll": false,
         "label": "Namespace",
         "multi": false,
         "name": "namespace",
@@ -1718,10 +1714,6 @@
           "value": [
             "$__all"
           ]
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "6AjfXy0nk"
         },
         "definition": "label_values(kafka_consumer_app_info_starttimems, id)",
         "hide": 0,
@@ -1752,10 +1744,6 @@
           "value": [
             "$__all"
           ]
-        },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "6AjfXy0nk"
         },
         "definition": "label_values(topic)",
         "hide": 0,
@@ -1828,6 +1816,6 @@
   "timezone": "",
   "title": "Kafka Consumer",
   "uid": "-C-IEldWk2",
-  "version": 33,
+  "version": 23,
   "weekStart": ""
 }
